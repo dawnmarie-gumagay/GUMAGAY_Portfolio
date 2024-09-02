@@ -1,9 +1,9 @@
 import streamlit as st
 
-
+# Set the page icon and layout
 st.set_page_config(page_icon="👨‍💻", layout="wide")
 
-
+# Set linear gradient background color using CSS
 page_bg_gradient = """
 <style>
 .stApp {
@@ -59,10 +59,10 @@ page_bg_gradient = """
 </style>
 """
 
-
+# Add the CSS to the app
 st.markdown(page_bg_gradient, unsafe_allow_html=True)
 
-
+# Sidebar toggle button
 st.markdown("""
 <div class="sidebar-toggle">☰</div>
 <div class="sidebar-menu" id="menu">
@@ -83,18 +83,18 @@ function toggleSidebar() {
 </script>
 """, unsafe_allow_html=True)
 
-
+# Sidebar content
 with st.sidebar:
-    st.image(r"C:\Users\dawn\OneDrive\Pictures\Camera Roll\FORMAL PIC 2X2.png", width=300)  # Wider profile image in sidebar
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/FORMAL%20PIC%202X2.png", width=300)  # Wider profile image in sidebar
     st.header("Dawn Marie D. Gumagay")
     st.write("""
     I am a 4th Year BSIT student at CIT-U. My journey in technology has been a transformative experience, shaping my skills and deepening my understanding of IT's impact on our lives.
     """)
 
-
+# Main content
 st.title("Dawn Marie D. Gumagay's Portfolio")
 
-
+# Display content based on menu selection
 menu = st.sidebar.selectbox(
     "Choose a section",
     ["Home", "Educational Journey", "Skills", "Certificates", "Projects", "Extracurricular Activities", "Hobbies and Interests", "Contact Information"]
@@ -175,20 +175,20 @@ elif menu == "Extracurricular Activities":
       - **Role:** IT Representative
       - **Responsibilities:** Addressed the concerns and needs of the Technologian Body through the Committee on Technologian Concerns, focusing on enhancing IT infrastructure and student experience.
     """)
-    st.image(r"C:\Users\dawn\Downloads\4.png", caption="Extracurricular Activity 1", width=300)
-    st.image(r"C:\Users\dawn\Downloads\5.jpeg", caption="Extracurricular Activity 2", width=300)
-    st.video(r"C:\Users\dawn\Downloads\6.mp4")
-    st.image(r"C:\Users\dawn\Downloads\8.jpeg", caption="Extracurricular Activity 3", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/4.png", caption="Extracurricular Activity 1", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/5.jpeg", caption="Extracurricular Activity 2", width=300)
+    st.video("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/6.mp4")
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/8.jpeg", caption="Extracurricular Activity 3", width=300)
 
 elif menu == "Hobbies and Interests":
     st.subheader("Hobbies and Interests")
     st.write("""
     I have a passion for painting, which allows me to express my creativity and unwind. Here are some of my paintings:
     """)
-    st.image(r"C:\Users\dawn\Downloads\1.jpg", caption="Painting 1", width=300)
-    st.image(r"C:\Users\dawn\Downloads\2.jpg", caption="Painting 2", width=300)
-    st.image(r"C:\Users\dawn\Downloads\3.jpg", caption="Painting 3", width=300)
-    st.image(r"C:\Users\dawn\Downloads\7.jpeg", caption="Additional Hobby", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/1.jpg", caption="Painting 1", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/2.jpg", caption="Painting 2", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/3.jpg", caption="Painting 3", width=300)
+    st.image("https://github.com/dawnmarie-gumagay/GUMAGAY_Portfolio/raw/main/media/7.jpeg", caption="Additional Hobby", width=300)
 
     st.write("""
     In addition to painting, I have a deep interest in:
@@ -208,3 +208,11 @@ elif menu == "Contact Information":
     - **GitHub:** [dawnmarie-gumagay](https://github.com/dawnmarie-gumagay)
     """)
 
+# Hide footer
+st.markdown("""
+    <style>
+    footer {
+        visibility: hidden;
+    }
+    </style>
+""", unsafe_allow_html=True)
